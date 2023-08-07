@@ -1,0 +1,51 @@
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="256dp"
+    android:height="256dp"
+    android:viewportWidth="256"
+    android:viewportHeight="256">
+    <group>
+        <clip-path
+            android:pathData="M0,0h256v256h-256z"/>
+        <group>
+            <clip-path
+                android:pathData="M0,0h256v256h-256z"/>
+            <path
+                android:pathData="M128,187.97C161.12,187.97 187.97,161.12 187.97,128C187.97,94.88 161.12,68.03 128,68.03C94.88,68.03 68.03,94.88 68.03,128C68.03,161.12 94.88,187.97 128,187.97Z"
+                android:strokeWidth="20.1829"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"/>
+            <path
+                android:pathData="M43.78,95.14L20.73,72.09C13.92,65.28 10.09,56.04 10.09,46.41C10.09,36.78 13.92,27.54 20.73,20.73C27.54,13.92 36.78,10.09 46.41,10.09C56.04,10.09 65.28,13.92 72.09,20.73L95.14,43.78"
+                android:strokeWidth="20.1829"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"/>
+            <path
+                android:pathData="M160.86,43.78L183.91,20.73C190.72,13.92 199.96,10.09 209.59,10.09C219.22,10.09 228.46,13.92 235.27,20.73C242.08,27.54 245.91,36.78 245.91,46.41C245.91,56.04 242.08,65.28 235.27,72.09L212.22,95.14"
+                android:strokeWidth="20.1829"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"/>
+            <path
+                android:pathData="M95.14,212.22L72.09,235.27C65.28,242.08 56.04,245.91 46.41,245.91C36.78,245.91 27.54,242.08 20.73,235.27C13.92,228.46 10.09,219.22 10.09,209.59C10.09,199.96 13.92,190.72 20.73,183.91L43.78,160.86"
+                android:strokeWidth="20.1829"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"/>
+            <path
+                android:pathData="M212.22,160.86L235.27,183.91C242.08,190.72 245.91,199.96 245.91,209.59C245.91,219.22 242.08,228.46 235.27,235.27C228.46,242.08 219.22,245.91 209.59,245.91C199.96,245.91 190.72,242.08 183.91,235.27L160.86,212.22"
+                android:strokeWidth="20.1829"
+                android:fillColor="@android:color/transparent"
+                android:strokeColor="#000000"
+                android:strokeLineCap="round"/>
+        </group>
+    </group>
+</vector>

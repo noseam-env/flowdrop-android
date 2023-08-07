@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+<resources>
+    <string name="app_name">FlowDrop</string>
+    <string name="flowdrop_logo_description">Логотип FlowDrop</string>
+    <string name="waiting_for_the_files_to_be_sent">Принимаем файлы</string>
+    <string name="share_button">Отправить</string>
+    <string name="select_receivers">Выберите получателей</string>
+    <string name="donate">Пожертвовать</string>
+    <string name="open_settings">Открыть настройки</string>
+    <string name="make_sure_local_network">Убедитесь, что устройства, на которые вы хотите отправить файлы, находятся в вашей локальной сети</string>
+    <string name="send_to_selected_devices">Отправить на выбранные устройства</string>
+    <string name="send_button">Отправить</string>
+    <string name="receive_in_background">Получать в фоне</string>
+    <string name="settings">Настройки</string>
+    <string name="receiving_in_background_warn">Получение в фоне требует режим батареи \"Нет ограничений\"</string>
+    <string name="flowdrop_android_credit">FlowDrop Android {version}\nThis software licensed under GNU GPL version 3 with anti-commercial clause.\nSource code available on GitHub.</string>
+    <string name="open_app_settings">Открыть настройки</string>
+    <string name="skip">Пропустить</string>
+    <string name="current_battery_optimization_mode">Текущий режем оптимизации использования батареи:</string>
+    <string name="bad_mode_for_background">В режиме батареи \"Ограниченный\" вы не сможете принимать файлы в фоновом режиме</string>
+    <string name="restricted">ОГРАНИЧЕННЫЙ</string>
+    <string name="how_to_change_battery_mode">Как изменить режим батареи?</string>
+    <string name="change_battery_mode_tutorial">Нажмите на кнопку ниже, далее \"Батарея\" или \"Контроль активности\", далее выберите режим \"Без ограничений\"</string>
+</resources>

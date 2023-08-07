@@ -1,0 +1,3 @@
+[submodule "app/src/main/cpp/libflowdrop"]
+	path = app/src/main/cpp/libflowdrop
+	url = https://github.com/noseam-env/libflowdrop

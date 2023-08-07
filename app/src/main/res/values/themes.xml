@@ -1,0 +1,33 @@
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FlowDrop" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorOnContainer">@color/primary</item>
+        <item name="colorOnPrimary">@color/primary_text</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/primary</item>
+        <item name="colorOnSecondary">@color/primary_text</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">@color/oneui_bg1</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Widget.App.Switch" parent="Widget.Material3.CompoundButton.Switch">
+        <item name="colorSurfaceVariant">@color/primary</item>
+        <item name="colorPrimary">@color/brand</item>
+        <item name="colorOutline">@color/primary</item>
+        <item name="colorOnPrimary">@color/brand</item>
+    </style>
+</resources>

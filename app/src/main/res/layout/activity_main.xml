@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/oneui_bg1">
+
+    <Button
+        android:id="@+id/donateButton"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="4dp"
+        android:contentDescription="@string/donate"
+        app:icon="@drawable/round_coffee_24"
+        app:iconSize="24dp"
+        app:iconTint="@color/oneui_text3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/oneui_ripple" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        style="?attr/materialIconButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:contentDescription="@string/open_settings"
+        app:icon="@drawable/round_settings_24"
+        app:iconSize="24dp"
+        app:iconTint="@color/oneui_text3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:rippleColor="@color/oneui_ripple" />
+
+    <LinearLayout
+        android:id="@+id/blockLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/shareButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:id="@+id/iconImageView"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/flowdrop_logo_description"
+            android:drawableTint="@color/oneui_text3"
+            android:src="@drawable/flowdrop" />
+
+        <TextView
+            android:id="@+id/labelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:text="@string/waiting_for_the_files_to_be_sent"
+            android:textColor="@color/oneui_text3"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="32dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:text="@string/share_button"
+        android:textColor="@color/primary_text"
+        android:backgroundTint="@color/primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

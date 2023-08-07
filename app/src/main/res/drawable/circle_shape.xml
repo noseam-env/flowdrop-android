@@ -1,0 +1,28 @@
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="@color/primary" />
+            <size android:width="20dp" android:height="20dp" />
+        </shape>
+    </item>
+
+    <item
+        android:left="5dp"
+        android:top="5dp"
+        android:right="5dp"
+        android:bottom="5dp">
+        <shape android:shape="oval">
+            <solid android:color="@color/primary_over" />
+            <size android:width="10dp" android:height="10dp" />
+        </shape>
+    </item>
+
+</layer-list>

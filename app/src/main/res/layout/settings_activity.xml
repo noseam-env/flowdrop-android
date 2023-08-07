@@ -1,0 +1,80 @@
+<!--
+  ~ This file is part of FlowDrop Android.
+  ~
+  ~ For license and copyright information please follow this link:
+  ~ https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
+  -->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/oneui_bg1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/backLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="18dp"
+            android:paddingBottom="2dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="18dp"
+                app:srcCompat="@drawable/round_arrow_back_24" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings"
+                android:textSize="20sp"
+                android:textColor="@color/oneui_text1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/receiveInBgSwitch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/receive_in_background"
+                android:textSize="18sp"
+                android:textColor="@color/oneui_text1"
+                android:height="58dp"
+                android:paddingHorizontal="24dp"
+                android:background="@drawable/oneui_rounded_corner_background" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/receiving_in_background_warn"
+                android:textSize="16sp"
+                android:textColor="@color/oneui_text4"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textAbout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="40dp"
+            android:text="@string/flowdrop_android_credit"
+            android:textColor="@color/oneui_text4"
+            android:textSize="16sp" />
+
+    </LinearLayout>
