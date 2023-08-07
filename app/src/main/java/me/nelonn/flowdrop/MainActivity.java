@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button donateButton = findViewById(R.id.donateButton);
         donateButton.setOnClickListener(v -> {
-            Util.openUrl(MainActivity.this, "https://flowdrop.com/donate");
+            Util.openUrl(MainActivity.this, "https://flowdrop.site/donate");
         });
 
         Button settingsButton = findViewById(R.id.settingsButton);
