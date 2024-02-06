@@ -7,8 +7,6 @@
 
 package me.nelonn.flowdrop;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,13 +26,11 @@ public class InstructionsActivity extends AppCompatActivity {
         }
 
         findViewById(R.id.skipBtn).setOnClickListener(view -> finish());
-        findViewById(R.id.openAppSettingsBtn).setOnClickListener(view -> openAppSettings());
+        findViewById(R.id.openDialogBtn).setOnClickListener(view -> openDialog());
     }
 
-    private void openAppSettings() {
-        Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        intent.setData(Uri.parse("package:" + getPackageName()));
-        startActivity(intent);
+    private void openDialog() {
+        startActivity(BatteryOptimizationMode.getDisableIntent(this));
     }
 
     @Override

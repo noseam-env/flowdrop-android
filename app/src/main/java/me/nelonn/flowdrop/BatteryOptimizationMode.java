@@ -7,6 +7,7 @@
 
 package me.nelonn.flowdrop;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,6 +23,11 @@ public enum BatteryOptimizationMode {
     Optimized,
     Restricted;
 
+    public boolean shouldChange() {
+        return this == Optimized || this == Restricted;
+    }
+
+    @SuppressLint("QueryPermissionsNeeded")
     public static BatteryOptimizationMode get(@NonNull Context context) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
             return BatteryOptimizationMode.Unknown;
@@ -31,13 +37,18 @@ public enum BatteryOptimizationMode {
         if (powerManager.isIgnoringBatteryOptimizations(packageName)) {
             return BatteryOptimizationMode.Unrestricted;
         }
-        Intent intent = new Intent();
-        intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
-        intent.setData(Uri.parse("package:" + packageName));
-        if (intent.resolveActivity(context.getPackageManager()) != null) {
+        if (getDisableIntent(context).resolveActivity(context.getPackageManager()) != null) {
             return BatteryOptimizationMode.Restricted;
         } else {
             return BatteryOptimizationMode.Optimized;
         }
+    }
+
+    @SuppressLint("BatteryLife")
+    public static Intent getDisableIntent(@NonNull Context context) {
+        Intent intent = new Intent();
+        intent.setAction(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS);
+        intent.setData(Uri.parse("package:" + context.getPackageName()));
+        return intent;
     }
 }

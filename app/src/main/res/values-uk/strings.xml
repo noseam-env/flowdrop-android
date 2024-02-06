@@ -21,11 +21,9 @@
     <string name="settings">Настройка</string>
     <string name="receiving_in_background_warn">Отримання в тлі вимагає режим батареї \"Немає обмежень\"</string>
     <string name="flowdrop_android_credit">FlowDrop Android {version}\nThis software licensed under GNU GPL version 3 with anti-commercial clause.\nSource code available on GitHub.</string>
-    <string name="open_app_settings">Відкрити налаштування</string>
+    <string name="open_battery_dialog">Вимкніть оптимізацію акумулятора</string>
     <string name="skip">Пропустивши</string>
     <string name="current_battery_optimization_mode">Поточний режим оптимізації використання батареї:</string>
     <string name="bad_mode_for_background">У режимі оптимізації використання батареї \"обмежений\" ви не зможете приймати файли у фоновому режимі</string>
     <string name="restricted">ОБМЕЖЕНИЙ</string>
-    <string name="how_to_change_battery_mode">Як змінити режим батареї?</string>
-    <string name="change_battery_mode_tutorial">Натисніть на кнопку нижче, далі \"Батарея\" або \"Контроль активності\", далі виберіть режим \"Без обмежень\"</string>
 </resources>
