@@ -20,6 +20,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -37,9 +38,9 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(Preferences.NAME, Context.MODE_PRIVATE);
         boolean isEnabled = preferences.getBoolean(Preferences.RECEIVE_IN_BACKGROUND, false);
 
-        SwitchMaterial switchMaterial = findViewById(R.id.receiveInBgSwitch);
-        switchMaterial.setChecked(isEnabled);
-        switchMaterial.setOnCheckedChangeListener((buttonView, isChecked) -> {
+        MaterialSwitch materialSwitch = findViewById(R.id.receiveInBgSwitch);
+        materialSwitch.setChecked(isEnabled);
+        materialSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
             Preferences.setReceiveInBackground(SettingsActivity.this, isChecked);
         });
 
