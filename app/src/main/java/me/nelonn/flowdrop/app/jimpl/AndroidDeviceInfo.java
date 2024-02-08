@@ -5,14 +5,14 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.jimpl;
+package me.nelonn.flowdrop.app.jimpl;
 
 import android.os.Build;
 import android.provider.Settings;
 
 import org.jetbrains.annotations.NotNull;
 
-import me.nelonn.flowdrop.AppController;
+import me.nelonn.flowdrop.ui.AppController;
 import me.nelonn.jflowdrop.DeviceInfo;
 import me.nelonn.knotandroidinfo.DeviceModelInfo;
 import me.nelonn.knotandroidinfo.DeviceModelInfoProvider;

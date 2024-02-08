@@ -24,7 +24,7 @@
     <uses-permission android:name="android.permission.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION" />
 
     <application
-        android:name=".AppController"
+        android:name=".ui.AppController"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -35,7 +35,7 @@
         android:theme="@style/Theme.FlowDrop"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:resizeableActivity="true">
             <intent-filter>
@@ -45,7 +45,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ShareActivity"
+            android:name=".ui.ShareActivity"
             android:exported="true"
             android:theme="@style/Transparent">
             <intent-filter
@@ -75,22 +75,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".InstructionsActivity"
+            android:name=".ui.InstructionsActivity"
             android:exported="false" />
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:exported="false" />
 
         <service
-            android:name=".background.BackgroundSendingService"
+            android:name=".app.background.BackgroundSendingService"
             android:exported="false" />
         <service
-            android:name=".background.BackgroundServerService"
+            android:name=".app.background.BackgroundServerService"
             android:enabled="true"
             android:exported="false" />
 
         <receiver
-            android:name=".background.ReceiverRestartReceiver"
+            android:name=".app.background.ReceiverRestartReceiver"
             android:enabled="true"
             android:exported="true"
             android:label="RestartServiceWhenStopped">

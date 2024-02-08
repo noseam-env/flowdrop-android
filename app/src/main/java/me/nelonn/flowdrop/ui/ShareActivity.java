@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.ui;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -17,8 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import me.nelonn.flowdrop.jimpl.AndroidFile;
-import me.nelonn.flowdrop.ui.SelectDevicesFragment;
+import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 
 public class ShareActivity extends AppCompatActivity {
 

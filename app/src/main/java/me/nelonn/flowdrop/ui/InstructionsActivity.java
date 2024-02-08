@@ -5,11 +5,15 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.ui;
 
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import me.nelonn.flowdrop.R;
+import me.nelonn.flowdrop.app.BatteryOptimizationMode;
+import me.nelonn.flowdrop.app.Preferences;
 
 public class InstructionsActivity extends AppCompatActivity {
 

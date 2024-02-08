@@ -5,17 +5,20 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.ui;
 
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
-import me.nelonn.flowdrop.background.BackgroundServerService;
-import me.nelonn.flowdrop.jimpl.AndroidDeviceInfo;
-import me.nelonn.flowdrop.jimpl.DNSSDFactory;
-import me.nelonn.flowdrop.jimpl.NsdDNSSD;
+import me.nelonn.flowdrop.app.BatteryOptimizationMode;
+import me.nelonn.flowdrop.app.Preferences;
+import me.nelonn.flowdrop.app.Util;
+import me.nelonn.flowdrop.app.background.BackgroundServerService;
+import me.nelonn.flowdrop.app.jimpl.AndroidDeviceInfo;
+import me.nelonn.flowdrop.app.jimpl.DNSSDFactory;
+import me.nelonn.flowdrop.app.jimpl.NsdDNSSD;
 import me.nelonn.jflowdrop.DeviceInfo;
 import me.nelonn.jflowdrop.JFlowDrop;
 

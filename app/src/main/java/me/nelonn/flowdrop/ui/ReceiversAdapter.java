@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import me.nelonn.flowdrop.R;
+import me.nelonn.flowdrop.app.Receiver;
 import me.nelonn.jflowdrop.DeviceInfo;
 
 public class ReceiversAdapter extends RecyclerView.Adapter<ReceiversAdapter.ReceiverViewHolder> {

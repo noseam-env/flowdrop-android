@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.ui;
 
 import android.Manifest;
 import android.content.Context;
@@ -28,9 +28,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import me.nelonn.flowdrop.background.BackgroundServerService;
-import me.nelonn.flowdrop.jimpl.AndroidFile;
-import me.nelonn.flowdrop.ui.SelectDevicesFragment;
+import me.nelonn.flowdrop.R;
+import me.nelonn.flowdrop.app.Preferences;
+import me.nelonn.flowdrop.app.Util;
+import me.nelonn.flowdrop.app.background.BackgroundServerService;
+import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_PICK_FILES = 1;

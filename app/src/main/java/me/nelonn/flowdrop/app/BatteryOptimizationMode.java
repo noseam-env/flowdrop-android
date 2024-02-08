@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.app;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

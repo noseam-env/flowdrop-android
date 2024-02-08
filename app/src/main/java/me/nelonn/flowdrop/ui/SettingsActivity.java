@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.ui;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -21,7 +21,11 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.materialswitch.MaterialSwitch;
-import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import me.nelonn.flowdrop.BuildConfig;
+import me.nelonn.flowdrop.R;
+import me.nelonn.flowdrop.app.Preferences;
+import me.nelonn.flowdrop.app.Util;
 
 public class SettingsActivity extends AppCompatActivity {
 

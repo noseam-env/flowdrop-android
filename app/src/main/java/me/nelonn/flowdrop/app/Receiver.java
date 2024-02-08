@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.ui;
+package me.nelonn.flowdrop.app;
 
 import me.nelonn.jflowdrop.DeviceInfo;
 

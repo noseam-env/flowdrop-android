@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.jimpl;
+package me.nelonn.flowdrop.app.jimpl;
 
 import android.content.Context;
 import android.util.Log;

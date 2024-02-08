@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.background;
+package me.nelonn.flowdrop.app.background;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -25,9 +25,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import me.nelonn.flowdrop.AppController;
+import me.nelonn.flowdrop.ui.AppController;
 import me.nelonn.flowdrop.R;
-import me.nelonn.flowdrop.jimpl.AndroidFile;
+import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 import me.nelonn.jflowdrop.EventListener;
 import me.nelonn.jflowdrop.File;
 import me.nelonn.jflowdrop.JFlowDrop;

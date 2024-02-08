@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop;
+package me.nelonn.flowdrop.app;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
-import me.nelonn.flowdrop.background.BackgroundServerService;
+import me.nelonn.flowdrop.app.background.BackgroundServerService;
 
 public class Preferences {
     public static final String NAME = "flowdrop";

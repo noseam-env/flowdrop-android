@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.background;
+package me.nelonn.flowdrop.app.background;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

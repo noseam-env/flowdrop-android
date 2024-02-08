@@ -33,11 +33,10 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.Collectors;
 
-import me.nelonn.flowdrop.AppController;
 import me.nelonn.flowdrop.R;
-import me.nelonn.flowdrop.ShareActivity;
-import me.nelonn.flowdrop.background.BackgroundSendingService;
-import me.nelonn.flowdrop.jimpl.AndroidFile;
+import me.nelonn.flowdrop.app.Receiver;
+import me.nelonn.flowdrop.app.background.BackgroundSendingService;
+import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 import me.nelonn.jflowdrop.DeviceInfo;
 import me.nelonn.jflowdrop.JFlowDrop;
 
