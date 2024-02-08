@@ -34,6 +34,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowDrop"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
@@ -89,6 +90,21 @@
             android:enabled="true"
             android:exported="false" />
 
+        <service
+            android:name=".app.ToggleTileService"
+            android:exported="true"
+            android:process=":bg"
+            android:label="@string/quick_toggle"
+            android:icon="@drawable/flowdrop"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.TOGGLEABLE_TILE"
+                android:value="true" />
+        </service>
+
         <receiver
             android:name=".app.background.ReceiverRestartReceiver"
             android:enabled="true"
@@ -98,6 +114,7 @@
                 <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor" />
             </intent-filter>
         </receiver>
+
     </application>
 
 </manifest>

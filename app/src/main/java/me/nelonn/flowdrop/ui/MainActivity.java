@@ -29,6 +29,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import me.nelonn.flowdrop.R;
+import me.nelonn.flowdrop.app.Constants;
 import me.nelonn.flowdrop.app.Preferences;
 import me.nelonn.flowdrop.app.Util;
 import me.nelonn.flowdrop.app.background.BackgroundServerService;
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button donateButton = findViewById(R.id.donateButton);
         donateButton.setOnClickListener(v -> {
-            Util.openUrl(MainActivity.this, "https://flowdrop.site/donate");
+            Util.openUrl(MainActivity.this, Constants.DONATE_WEBSITE);
         });
 
         Button settingsButton = findViewById(R.id.settingsButton);
