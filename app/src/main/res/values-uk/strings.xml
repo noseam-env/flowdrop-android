@@ -26,4 +26,10 @@
     <string name="current_battery_optimization_mode">Поточний режим оптимізації використання батареї:</string>
     <string name="bad_mode_for_background">У режимі оптимізації використання батареї \"обмежений\" ви не зможете приймати файли у фоновому режимі</string>
     <string name="restricted">ОБМЕЖЕНИЙ</string>
+
+    <!-- Foreground Notification -->
+    <string name="notification_channel_service_foreground_title">Background Service</string>
+    <string name="notification_channel_service_foreground_subtitle">Notifications shown when FlowDrop is running</string>
+    <string name="notification_service_foreground_title">FlowDrop</string>
+    <string name="notification_service_foreground_subtitle">Running in the background, tap to hide</string>
 </resources>

@@ -13,7 +13,7 @@ import android.content.SharedPreferences;
 
 import androidx.annotation.NonNull;
 
-import me.nelonn.flowdrop.app.background.BackgroundServerService;
+import me.nelonn.flowdrop.ui.service.ServerForegroundService;
 
 public class Preferences {
     public static final String NAME = "flowdrop";
@@ -23,8 +23,8 @@ public class Preferences {
     public static void setReceiveInBackground(@NonNull Context context, boolean enabled) {
         SharedPreferences preferences = context.getSharedPreferences(Preferences.NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        boolean isServiceRunning = Util.isServiceRunning(context, BackgroundServerService.class);
-        Intent serviceIntent = new Intent(context, BackgroundServerService.class);
+        boolean isServiceRunning = Util.isServiceRunning(context, ServerForegroundService.class);
+        Intent serviceIntent = new Intent(context, ServerForegroundService.class);
         if (enabled) {
             editor.putBoolean(Preferences.RECEIVE_IN_BACKGROUND, true);
             if (!isServiceRunning) {

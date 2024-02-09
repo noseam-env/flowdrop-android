@@ -8,11 +8,14 @@
 package me.nelonn.flowdrop.app;
 
 import android.app.ActivityManager;
+import android.app.Notification;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 
 public class Util {
     private Util() {
@@ -35,5 +38,17 @@ public class Util {
             }
         }
         return false;
+    }
+
+    public static NotificationCompat.Builder createNotification(Context context, NotificationChannel channel) {
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        android.app.NotificationChannel notificationChannel = new android.app.NotificationChannel(
+                channel.getId(),
+                context.getString(channel.getTitleRes()),
+                channel.getImportance()
+        );
+        notificationChannel.setDescription(context.getString(channel.getDescRes()));
+        notificationManager.createNotificationChannel(notificationChannel);
+        return new NotificationCompat.Builder(context, channel.getId());
     }
 }

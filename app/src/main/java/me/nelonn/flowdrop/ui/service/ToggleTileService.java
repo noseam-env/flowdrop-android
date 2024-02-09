@@ -1,4 +1,4 @@
-package me.nelonn.flowdrop.app;
+package me.nelonn.flowdrop.ui.service;
 
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;

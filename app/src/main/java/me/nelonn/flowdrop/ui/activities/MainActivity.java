@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.ui;
+package me.nelonn.flowdrop.ui.activities;
 
 import android.Manifest;
 import android.content.Context;
@@ -21,6 +21,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.app.ServiceCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 
@@ -32,7 +33,8 @@ import me.nelonn.flowdrop.R;
 import me.nelonn.flowdrop.app.Constants;
 import me.nelonn.flowdrop.app.Preferences;
 import me.nelonn.flowdrop.app.Util;
-import me.nelonn.flowdrop.app.background.BackgroundServerService;
+import me.nelonn.flowdrop.ui.SelectDevicesFragment;
+import me.nelonn.flowdrop.ui.service.ServerForegroundService;
 import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 
 public class MainActivity extends AppCompatActivity {
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        startService(new Intent(this, BackgroundServerService.class));
+        ServerForegroundService.start(this, false);
     }
 
     private void openFilePicker() {

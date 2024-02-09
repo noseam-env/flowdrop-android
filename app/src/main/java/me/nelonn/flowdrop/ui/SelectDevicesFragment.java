@@ -37,6 +37,7 @@ import me.nelonn.flowdrop.R;
 import me.nelonn.flowdrop.app.Receiver;
 import me.nelonn.flowdrop.app.background.BackgroundSendingService;
 import me.nelonn.flowdrop.app.jimpl.AndroidFile;
+import me.nelonn.flowdrop.ui.activities.ShareActivity;
 import me.nelonn.jflowdrop.DeviceInfo;
 import me.nelonn.jflowdrop.JFlowDrop;
 

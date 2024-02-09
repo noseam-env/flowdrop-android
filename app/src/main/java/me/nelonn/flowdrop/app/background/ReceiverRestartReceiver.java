@@ -12,12 +12,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import me.nelonn.flowdrop.ui.service.ServerForegroundService;
+
 public class ReceiverRestartReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
         Log.i(ReceiverRestartReceiver.class.getSimpleName(), "Service Stopped!");
-        context.startService(new Intent(context, BackgroundServerService.class));
+        context.startService(new Intent(context, ServerForegroundService.class));
     }
 
 }
