@@ -10,6 +10,7 @@ package me.nelonn.flowdrop.app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Environment;
 
 import androidx.annotation.NonNull;
 
@@ -19,6 +20,7 @@ public class Preferences {
     public static final String NAME = "flowdrop";
     public static final String INSTRUCTIONS_VIEWED = "instructions_viewed";
     public static final String RECEIVE_IN_BACKGROUND = "receive_in_background";
+    public static final long WAIT_FOR_ACCEPT_MILLIS = 30 * 1000;
 
     public static void setReceiveInBackground(@NonNull Context context, boolean enabled) {
         SharedPreferences preferences = context.getSharedPreferences(Preferences.NAME, Context.MODE_PRIVATE);
@@ -37,6 +39,10 @@ public class Preferences {
             }
         }
         editor.apply();
+    }
+
+    public static String getDestinationDirectory(@NonNull Context context) {
+        return Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
     }
 
     private Preferences() {

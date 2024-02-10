@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.app.background;
+package me.nelonn.flowdrop.app.service;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -14,12 +14,12 @@ import android.util.Log;
 
 import me.nelonn.flowdrop.ui.service.ServerForegroundService;
 
-public class ReceiverRestartReceiver extends BroadcastReceiver {
+public class ServerRestartReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i(ReceiverRestartReceiver.class.getSimpleName(), "Service Stopped!");
-        context.startService(new Intent(context, ServerForegroundService.class));
+        Log.i("FLOWDROP", "Service Stopped!");
+        ServerForegroundService.start(context, false);
     }
 
 }

@@ -91,13 +91,12 @@
             android:foregroundServiceType="specialUse" />
 
         <service
-            android:name=".app.background.BackgroundSendingService"
+            android:name=".app.service.SendingForegroundService"
             android:exported="false" />
 
         <service
             android:name=".ui.service.ToggleTileService"
             android:exported="true"
-            android:process=":bg"
             android:label="@string/quick_toggle"
             android:icon="@drawable/ic_notification_icon"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -110,12 +109,21 @@
         </service>
 
         <receiver
-            android:name=".app.background.ReceiverRestartReceiver"
+            android:name=".app.service.ServerRestartReceiver"
             android:enabled="true"
             android:exported="true"
             android:label="RestartServiceWhenStopped">
             <intent-filter>
                 <action android:name="uk.ac.shef.oak.ActivityRecognition.RestartSensor" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".app.service.FilesAcceptanceReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="accept" />
+                <action android:name="decline" />
             </intent-filter>
         </receiver>
 

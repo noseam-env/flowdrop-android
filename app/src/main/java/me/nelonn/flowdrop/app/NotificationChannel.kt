@@ -15,8 +15,20 @@ enum class NotificationChannel(
             R.string.notification_channel_service_foreground_title,
             R.string.notification_channel_service_foreground_subtitle
     ),
-    RECEIVED_FILE(
-            "received_file",
+    SENDING_FILES(
+            "sending_files",
+            NotificationManager.IMPORTANCE_DEFAULT,
+            R.string.notification_channel_service_foreground_title,
+            R.string.notification_channel_service_foreground_subtitle
+    ),
+    ACCEPT_FILES(
+            "accept_files",
+            NotificationManager.IMPORTANCE_HIGH,
+            R.string.notification_channel_service_foreground_title,
+            R.string.notification_channel_service_foreground_subtitle
+    ),
+    RECEIVED_FILES(
+            "received_files",
             NotificationManager.IMPORTANCE_LOW,
             R.string.notification_channel_service_foreground_title,
             R.string.notification_channel_service_foreground_subtitle

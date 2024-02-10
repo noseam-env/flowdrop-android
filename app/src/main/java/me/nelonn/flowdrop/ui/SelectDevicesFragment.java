@@ -35,7 +35,7 @@ import java.util.stream.Collectors;
 
 import me.nelonn.flowdrop.R;
 import me.nelonn.flowdrop.app.Receiver;
-import me.nelonn.flowdrop.app.background.BackgroundSendingService;
+import me.nelonn.flowdrop.app.service.SendingForegroundService;
 import me.nelonn.flowdrop.app.jimpl.AndroidFile;
 import me.nelonn.flowdrop.ui.activities.ShareActivity;
 import me.nelonn.jflowdrop.DeviceInfo;
@@ -127,7 +127,7 @@ public class SelectDevicesFragment extends SuperBottomSheetFragment implements R
     public void sendTo(DeviceInfo receiver) {
         Context context = getContext();
         if (context == null) return;
-        Intent intent = new Intent(context, BackgroundSendingService.class);
+        Intent intent = new Intent(context, SendingForegroundService.class);
         intent.putExtra("receiverId", receiver.getId());
         intent.putParcelableArrayListExtra("files", new ArrayList<>(files.stream().map(AndroidFile::getUri).collect(Collectors.toList())));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {

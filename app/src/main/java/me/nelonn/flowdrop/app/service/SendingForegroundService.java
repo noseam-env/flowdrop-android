@@ -5,7 +5,7 @@
  * https://github.com/noseam-env/flowdrop-android/blob/master/LEGAL
  */
 
-package me.nelonn.flowdrop.app.background;
+package me.nelonn.flowdrop.app.service;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -33,7 +33,7 @@ import me.nelonn.jflowdrop.File;
 import me.nelonn.jflowdrop.JFlowDrop;
 import me.nelonn.jflowdrop.SendRequest;
 
-public class BackgroundSendingService extends Service {
+public class SendingForegroundService extends Service {
     private static final String CHANNEL_ID = "SendingChannel";
     private static final int NOTIFICATION_ID = 1;
 
@@ -94,6 +94,7 @@ public class BackgroundSendingService extends Service {
                 .setContentTitle("Sending file(s)")
                 .setContentText("Resolving receiver...")
                 .setSmallIcon(R.drawable.ic_notification_icon)
+                .setOngoing(true)
                 .setProgress(100, 0, true);
         return notificationBuilder.build();
     }
@@ -107,7 +108,7 @@ public class BackgroundSendingService extends Service {
     private void performBackgroundTask() {
         progressRunnable = () -> {
             List<AndroidFile> files = new ArrayList<>();
-            BackgroundSendingService.this.files.forEach(f -> {
+            SendingForegroundService.this.files.forEach(f -> {
                 AndroidFile file = f.clone();
                 file.open();
                 files.add(file);
