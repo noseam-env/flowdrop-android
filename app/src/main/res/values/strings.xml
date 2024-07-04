@@ -32,4 +32,10 @@
     <string name="notification_channel_service_foreground_subtitle">Notifications shown when FlowDrop is running</string>
     <string name="notification_service_foreground_title">FlowDrop</string>
     <string name="notification_service_foreground_subtitle">Running in the background, tap to hide</string>
+
+    <!-- Accept Notification -->
+    <string name="notification_channel_ask_title">Ask for send</string>
+    <string name="notification_channel_ask_subtitle">Notifications shown when someone is want to sent you files</string>
+    <string name="notification_ask_title">Someone is asking you for receive file(s)</string>
+    <string name="notification_ask_subtitle">Will be cancelled automatically in 30 seconds</string>
 </resources>

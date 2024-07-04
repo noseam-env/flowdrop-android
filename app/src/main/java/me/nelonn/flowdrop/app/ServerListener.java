@@ -26,19 +26,33 @@ public class ServerListener implements EventListener {
     }
 
     @Override
+    public void onReceivingTotalProgress(DeviceInfo sender, long totalSize, long receivedSize) {
+        Log.i("FLOWDROP", "onReceivingTotalProgress: " + sender + " " + totalSize + " " + receivedSize);
+        new Handler(Looper.getMainLooper()).post(() -> {
+            String senderName = sender.getName().orElse(sender.getModel().orElse(sender.getId()));
+            int progress = (int) ((receivedSize * 100) / totalSize);
+            Log.i("FLOWDROP", "Progress: " + progress);
+            NotificationCompat.Builder builder = Util.createNotification(context, NotificationChannel.ACCEPTING_FILES)
+                    .setContentTitle("Receiving file(s) from " + senderName)
+                    .setContentText("File(s) saved in downloads directory")
+                    .setSmallIcon(R.drawable.ic_notification_icon)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                    .setProgress(100, progress, false);
+            ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).notify(NotificationChannel.ACCEPTING_FILES.getIntId(), builder.build());
+        });
+    }
+
+    @Override
     public void onReceivingEnd(DeviceInfo sender, long totalSize) {
         Log.i("FLOWDROP", "onReceivingEnd: " + sender);
-        new Handler(Looper.getMainLooper()).post(new Runnable() {
-            @Override
-            public void run() {
-                String senderName = sender.getName().orElse(sender.getModel().orElse(sender.getId()));
-                NotificationCompat.Builder builder = Util.createNotification(context, NotificationChannel.RECEIVED_FILES)
-                        .setContentTitle(senderName + " sent you file(s)")
-                        .setContentText("File(s) saved in downloads directory")
-                        .setSmallIcon(R.drawable.ic_notification_icon)
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-                ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).notify(NotificationChannel.RECEIVED_FILES.getIntId(), builder.build());
-            }
+        new Handler(Looper.getMainLooper()).post(() -> {
+            String senderName = sender.getName().orElse(sender.getModel().orElse(sender.getId()));
+            NotificationCompat.Builder builder = Util.createNotification(context, NotificationChannel.ACCEPTING_FILES)
+                    .setContentTitle(senderName + " sent you file(s)")
+                    .setContentText("File(s) saved in downloads directory")
+                    .setSmallIcon(R.drawable.ic_notification_icon)
+                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+            ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).notify(NotificationChannel.ACCEPTING_FILES.getIntId(), builder.build());
         });
     }
 }

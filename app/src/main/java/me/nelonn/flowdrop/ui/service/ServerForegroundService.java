@@ -107,7 +107,7 @@ public class ServerForegroundService extends Service {
         Intent intent = new Intent(this, FilesAcceptanceReceiver.class);
         intent.setAction(action);
         intent.putExtra(FilesAcceptanceReceiver.EXTRA_ACCEPTANCE_ID, id);
-        return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+        return PendingIntent.getBroadcast(this, 0, intent, PendingIntent.FLAG_ONE_SHOT | PendingIntent.FLAG_IMMUTABLE);
     }
 
     private final class MessageHandler extends Handler {
@@ -132,23 +132,23 @@ public class ServerForegroundService extends Service {
                         Intent notificationIntent = new Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS);
                         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         notificationIntent.putExtra(Settings.EXTRA_APP_PACKAGE, getPackageName());
-                        notificationIntent.putExtra(Settings.EXTRA_CHANNEL_ID, NotificationChannel.ACCEPT_FILES.getId());
-                        NotificationCompat.Builder builder = Util.createNotification(context, NotificationChannel.ACCEPT_FILES)
-                                .setContentTitle(getString(R.string.notification_service_foreground_title))
-                                .setContentText(getString(R.string.notification_service_foreground_subtitle))
+                        notificationIntent.putExtra(Settings.EXTRA_CHANNEL_ID, NotificationChannel.ACCEPTING_FILES.getId());
+                        NotificationCompat.Builder builder = Util.createNotification(context, NotificationChannel.ACCEPTING_FILES)
+                                .setContentTitle(getString(R.string.notification_ask_title))
+                                .setContentText(getString(R.string.notification_ask_subtitle))
                                 .setSmallIcon(R.drawable.ic_notification_icon)
-                                .setTicker(getString(R.string.notification_service_foreground_title))
+                                .setTicker(getString(R.string.notification_ask_title))
                                 .setDeleteIntent(makeAcceptanceIntent(acceptanceId, "decline"))
                                 .addAction(R.drawable.ic_notification_icon, "Decline", makeAcceptanceIntent(acceptanceId, "decline"))
                                 .addAction(R.drawable.ic_notification_icon, "Accept", makeAcceptanceIntent(acceptanceId, "accept"));
                         Notification notification = builder.build();
-                        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(NotificationChannel.ACCEPT_FILES.getIntId(), notification);
+                        ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(NotificationChannel.ACCEPTING_FILES.getIntId(), notification);
                     });
                     Optional<Boolean> accepted = callback.await(Preferences.WAIT_FOR_ACCEPT_MILLIS, TimeUnit.MILLISECONDS);
-                    if (!accepted.isPresent()) {
+                    if (!accepted.orElse(false)) {
                         mainHandler.post(() -> {
                             // TODO: unique notification id
-                            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(NotificationChannel.ACCEPT_FILES.getIntId());
+                            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).cancel(NotificationChannel.ACCEPTING_FILES.getIntId());
                         });
                         return false;
                     }
@@ -156,7 +156,7 @@ public class ServerForegroundService extends Service {
                     // Why is this necessary?
                     // sending a file session does not have a unique ID
                     // we need to update the existing notification
-                    return accepted.orElse(false);
+                    return true;
                 });
                 server.setEventListener(new ServerListener(ServerForegroundService.this));
                 server.run();
